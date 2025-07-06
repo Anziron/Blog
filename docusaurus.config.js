@@ -48,25 +48,6 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -81,7 +62,6 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Anziron的博客',
         items: [
           {
             type: 'search',
@@ -90,9 +70,10 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'right',
-            label: '正文',
+            position: 'left',
+            label: '开发',
           },
+
           {
             href: 'https://github.com/Anziron/Blog',
             label: 'GitHub',
@@ -111,7 +92,8 @@ const config = {
         // Public API key: it is safe to commit it
         apiKey: 'c61b80b0c436bfef2382236eb2e33548',
 
-        indexName: 'blog',
+        indexName: 'anziron_top_2b0mhui52b_pages',
+
       },
     }),
 };

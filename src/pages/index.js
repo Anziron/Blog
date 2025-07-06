@@ -1,4 +1,3 @@
-import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import logo from "@site/static/img/banana.jpg";
@@ -110,11 +109,6 @@ function HomepageHeader() {
         <canvas width="300" height="300" style={{ borderRadius: '50%' }} />
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/HTML">
-            前往博客 →
-          </Link>
-        </div>
       </div>
     </header>
   );
@@ -134,7 +128,6 @@ export default function Home() {
     </Layout>
   );
 }
-
 class WebGL {
   gl;
   program;
@@ -259,3 +252,4 @@ function loadImage(path) {
     };
   });
 }
+

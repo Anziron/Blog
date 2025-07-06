@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
+  --ifm-color-primary: #6F4242;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -15,6 +15,12 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* 自定义变量，用于替代绿色 */
+  --custom-active-color: #6F4242;
+  --custom-active-border: #000000;
+  --custom-hover-bg: rgba(0, 0, 0, 0.05);
+  --custom-hover-color: #6F4242;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,4 +33,128 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* 暗色模式下的自定义变量 */
+  --custom-active-color: #6F4242;
+  --custom-active-border: #FF7F00;
+  --custom-hover-bg: rgba(255, 255, 255, 0.05);
+  --custom-hover-color: #6F4242;
+}
+
+/* 自定义导航栏样式 */
+.navbar__link--active {
+  /* 移除默认的背景色，保持黑色文字 */
+  background-color: transparent !important;
+  color: inherit !important;
+
+  /* 使用底部线条，颜色为#FF7F00，加粗 */
+  border-bottom: 3px solid var(--custom-active-border);
+  padding-bottom: 4px;
+
+  /* 保持字体粗细一致 */
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 导航栏链接悬停样式 */
+.navbar__link:hover {
+  color: var(--custom-hover-color) !important;
+}
+
+/* 自定义侧边栏样式 - 只改变文字颜色，不使用线条 */
+.menu__link--active {
+  /* 移除默认的背景色，只使用字体颜色 */
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+
+  /* 移除左侧边框 */
+  border-left: none;
+
+  /* 保持字体粗细一致 */
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 鼠标悬停时的样式 */
+.menu__link:hover {
+  background-color: var(--custom-hover-bg) !important;
+  color: var(--custom-hover-color) !important;
+}
+
+/* 移除选中项的绿色背景和颜色，只使用自定义颜色 */
+.menu__list .menu__list-item .menu__link--active {
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+}
+
+/* 移除所有可能的绿色背景和颜色 */
+.menu__link--active:not(.menu__link--sublist),
+.navbar__link--active,
+.pagination-nav__link--active,
+.tabs__item--active {
+  background-color: transparent !important;
+}
+
+/* 特别处理导航栏活动链接，保持黑色 */
+.navbar__link--active {
+  color: inherit !important;
+}
+
+/* 特别处理其他活动链接，使用自定义颜色 */
+.menu__link--active:not(.menu__link--sublist),
+.pagination-nav__link--active,
+.tabs__item--active {
+  color: var(--custom-active-color) !important;
+}
+
+/* 确保子菜单项也没有绿色背景，只有文字颜色变化 */
+.menu__list-item--collapsed .menu__list .menu__link--active {
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+}
+
+/* 文档页面中的侧边栏选中项 - 只改变文字颜色 */
+.theme-doc-sidebar-item-link-level-1.menu__list-item>.menu__link--active,
+.theme-doc-sidebar-item-link-level-2.menu__list-item>.menu__link--active,
+.theme-doc-sidebar-item-link-level-3.menu__list-item>.menu__link--active {
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+  border-left: none;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 侧边栏分类标题 */
+.menu__list-item-collapsible .menu__link--active {
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 面包屑导航 */
+.breadcrumbs__link--active {
+  background-color: transparent !important;
+  color: var(--custom-active-color) !important;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 标签页 */
+.tabs__item--active {
+  border-bottom-color: var(--custom-active-border) !important;
+  color: var(--custom-active-color) !important;
+  font-weight: normal;
+  font-size: inherit;
+}
+
+/* 修复可能的其他绿色元素 */
+.alert--success {
+  --ifm-alert-background-color: #f0f8ff;
+  --ifm-alert-border-color: #add8e6;
+}
+
+[data-theme='dark'] .alert--success {
+  --ifm-alert-background-color: #0d2e3b;
+  --ifm-alert-border-color: #1a5d7a;
 }

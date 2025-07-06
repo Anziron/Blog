@@ -11,5 +11,3 @@ title: 编程语言
 
 在这个部分，您可以找到以下内容：
 
-- [Python](./python.md) - Python编程语言的基础知识、高级特性和实用技巧
-- [JavaScript](./javascript.md) - JavaScript编程语言及其在Web开发中的应用 

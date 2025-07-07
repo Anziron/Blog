@@ -19,25 +19,52 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: '编程基础',
-      link: {
-        type: 'doc',
-        id: 'programming-basics/index',
-      },
-      items: [
-        'programming-basics/git',
-        'programming-basics/docker',
-      ],
-    },
-    {
-      type: 'category',
       label: '编程语言',
       link: {
         type: 'doc',
         id: 'programming-languages/index',
       },
       items: [
-        'programming-languages/python',
+        {
+          type: 'category',
+          label: 'Python',
+          link: {
+            type: 'doc',
+            id: 'programming-languages/python',
+          },
+          items: [
+            {
+              type: 'doc',
+              id: 'programming-languages/python/python-basics',
+              label: 'Python基础'
+            },
+            {
+              type: 'doc',
+              id: 'programming-languages/python/python-advanced',
+              label: 'Python进阶'
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: '开发工具',
+      link: {
+        type: 'doc',
+        id: 'development_tool/index',
+      },
+      items: [
+        {
+          type: 'doc',
+          id: 'development_tool/git',
+          label: 'Git'
+        },
+        {
+          type: 'doc',
+          id: 'development_tool/docker',
+          label: 'Docker'
+        },
       ],
     },
   ],

@@ -4,8 +4,8 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+import 'dotenv/config'; // 自动加载 .env 文件中的变量
 import { themes as prismThemes } from 'prism-react-renderer';
-
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
@@ -86,14 +86,9 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
       algolia: {
-        // The application ID provided by Algolia
-        appId: '2B0MHUI52B',
-
-        // Public API key: it is safe to commit it
-        apiKey: 'c61b80b0c436bfef2382236eb2e33548',
-
-        indexName: 'anziron_top_2b0mhui52b_pages',
-
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
       },
     }),
 };
